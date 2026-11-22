@@ -221,6 +221,60 @@ html.big .wc{zoom:1.2}
 @media(max-width:420px){.wl{grid-template-columns:1fr}.wl button{min-height:60px;display:flex;align-items:center;justify-content:space-between;padding:10px 18px}.wc h1{font-size:26px}}
 @media(prefers-reduced-motion:reduce){.welcome{transition:none}}
 @media(prefers-reduced-motion:reduce){.hint,.spot,.tcard,.viewer,.pbar i{transition:none}}
+
+/* ---------- สีแยกตามหน้าและภูมิภาค (รอบที่ 2) ---------- */
+.welcome{background:radial-gradient(760px 460px at 8% -8%,rgba(240,186,92,.62),transparent 62%),radial-gradient(640px 480px at 108% 112%,rgba(47,111,143,.62),transparent 60%),radial-gradient(520px 380px at 90% 10%,rgba(60,122,74,.45),transparent 60%),linear-gradient(160deg,rgba(54,34,26,.82),rgba(91,38,30,.84) 55%,rgba(31,52,62,.86))}
+.wc{position:relative;overflow:hidden;border-radius:26px;box-shadow:0 26px 70px rgba(10,6,4,.45)}
+.wc::before{content:'';position:absolute;left:0;right:0;top:0;height:7px;background:linear-gradient(90deg,#b8322a,#e0a33b 35%,#2f6f8f 68%,#3c7a4a)}
+.wlogo{color:#b8322a}
+.wc h1{background:linear-gradient(90deg,#8c2119,#b8322a 45%,#c77a1e);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wsub{color:#2f6f8f!important;font-weight:600}
+.wq{color:#6f5d4f}
+.wl button{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--lc-bg),#fff 75%);transition:transform .15s,box-shadow .15s,border-color .15s}
+.wl button::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--lc)}
+.wl button[data-l=th]{--lc:#b8322a;--lc-bg:#fbe6e1}
+.wl button[data-l=en]{--lc:#2f6f8f;--lc-bg:#e2eff5}
+.wl button[data-l=zh]{--lc:#3c7a4a;--lc-bg:#e4f2e6}
+.wl button:hover,.wl button:focus-visible{border-color:var(--lc);box-shadow:0 10px 22px -10px var(--lc)}
+.wl button[aria-pressed=true]{border-color:var(--lc);box-shadow:inset 0 0 0 1px var(--lc)}
+.wl b{color:var(--lc)}
+.wt{color:var(--mute)}
+/* บทแนะนำ: สีต่างกันทุกขั้น */
+.tcard{border-top:6px solid var(--tc,#b8322a)}
+.tstep{color:var(--tc,#b8322a);font-weight:700;letter-spacing:.02em}
+.tcard h3{color:var(--ink)}
+.tcard .btn.pri{background:var(--tc,#b8322a);border-color:var(--tc,#b8322a)}
+.dots i.on{background:var(--tc,#b8322a)}
+/* แผงข้อมูลตามภูมิภาค */
+.sheet .sh-h{background:linear-gradient(90deg,color-mix(in srgb,var(--acc) 22%,transparent),transparent 85%);border-bottom:3px solid var(--acc)}
+.card .eyebrow{display:inline-block;padding:3px 10px;border-radius:999px;background:color-mix(in srgb,var(--acc) 14%,transparent);color:var(--acc);font-weight:600}
+.card h2{color:var(--ink);border-left:5px solid var(--acc);padding-left:10px}
+.card .lead{color:var(--ink)}
+.sec{border-top:0;margin-top:14px;padding:12px 14px;border-radius:14px;background:linear-gradient(180deg,color-mix(in srgb,var(--acc) 8%,transparent),transparent 70%)}
+.sec h3::before{content:'';display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--acc);margin-right:8px;vertical-align:middle;box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 20%,transparent)}
+.feat li::marker{color:var(--acc)}
+/* หน้าเลือกหลัง */
+#pickP .pop-c{border-top:6px solid var(--acc)}
+#pickP .ph b{color:var(--acc)}
+.rgb{border-radius:16px;padding:12px 14px 12px 12px;margin-top:10px;border-top:0;background:linear-gradient(90deg,color-mix(in srgb,var(--c) 16%,transparent),transparent 78%)}
+.rgb>i{width:8px}
+.rgb h3{color:var(--c)}
+/* แผงภูมิอากาศ: สีตามแท็บ */
+#clP{--pc:#2d6fa3;border-top:5px solid var(--pc)}
+#clP[data-tab=flood]{--pc:#2d6fa3;background:linear-gradient(180deg,rgba(206,230,246,.97),rgba(255,255,255,.92))}
+#clP[data-tab=rain]{--pc:#56657d;background:linear-gradient(180deg,rgba(222,228,238,.97),rgba(255,255,255,.92))}
+#clP[data-tab=wind]{--pc:#3c8a5a;background:linear-gradient(180deg,rgba(220,240,226,.97),rgba(255,255,255,.92))}
+#clP .ph b{color:var(--pc)}
+/* แผงประกอบเรือน: โทนไม้ */
+#asmP{--pc:#9a6a35;border-top:5px solid var(--pc);background:linear-gradient(180deg,rgba(247,233,211,.97),rgba(255,255,255,.92))}
+#asmP .ph b{color:#7a4f25}
+/* ปุ่มด้านล่าง: ไอคอนแต่ละปุ่มมีสีของตัวเอง */
+#asmBtn:not([aria-pressed=true]) svg{stroke:#9a6a35}
+#clBtn:not([aria-pressed=true]) svg{stroke:#2d6fa3}
+#infoBtn:not([aria-pressed=true]) svg{stroke:var(--acc)}
+#asmBtn[aria-pressed=true]{background:#9a6a35}
+#clBtn[aria-pressed=true]{background:#2d6fa3}
+#infoBtn[aria-pressed=true]{background:var(--acc)}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -945,7 +999,7 @@ const draw=()=>{renderer.render(scene,cam());scaleBar();placeLabels();drawDims()
 const render=()=>{dirty=true};
 const clip=new THREE.Plane(V(0,-1,0),3);
 const $=id=>document.getElementById(id);
-(function loop(){if(!cur){requestAnimationFrame(loop);return}requestAnimationFrame(loop);const now=performance.now();if(asm){asmTick(now);dirty=true}if(cl.on&&!is2d()&&cl.tab!=='flood'){clTick(now);dirty=true}const moved=is2d()?c2.update():(eye?false:c3.update());if(moved||dirty){dirty=false;draw()}})();
+(function loop(){if(!cur){requestAnimationFrame(loop);return}requestAnimationFrame(loop);const now=performance.now();if(asm){asmTick(now);dirty=true}if(cl.on&&!is2d()){clTick(now);dirty=true}const moved=is2d()?c2.update():(eye?false:c3.update());if(moved||dirty){dirty=false;draw()}})();
 
 function build(){
   if(cur){scene.remove(cur);cur.traverse(o=>o.geometry&&o.geometry.dispose())}
@@ -1173,8 +1227,31 @@ $('asmNext').addEventListener('click',()=>{asm.play=false;if(asm.i<asm.s.length-
 
 /* ---------- จำลองสภาพอากาศ ---------- */
 const cl={on:false,tab:'flood',lv:1};
-const waterM=new THREE.MeshStandardMaterial({color:0x3a82ad,transparent:true,opacity:.58,roughness:.15,metalness:.1,depthWrite:false});
-const flood=new THREE.Mesh(new THREE.CircleGeometry(70,48),waterM);flood.rotation.x=-PI/2;flood.visible=false;flood.renderOrder=2;scene.add(flood);
+const waterM=new THREE.ShaderMaterial({transparent:true,depthWrite:false,side:THREE.DoubleSide,uniforms:{uT:{value:0}},
+  vertexShader:`varying vec2 vP;uniform float uT;
+    void main(){vP=position.xy;vec3 p=position;
+      p.z+=0.045*sin(p.x*0.31+uT*1.1)*cos(p.y*0.22-uT*0.7)+0.02*sin(p.x*0.9-p.y*0.6+uT*2.3)+0.012*sin((p.x+p.y)*1.7+uT*3.1);
+      gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.0);}`,
+  fragmentShader:`varying vec2 vP;uniform float uT;
+    void main(){float d=length(vP)/72.0;
+      float a=smoothstep(1.0,0.45,d)*0.93;
+      vec3 mud=vec3(0.50,0.40,0.24),tea=vec3(0.36,0.42,0.30),deep=vec3(0.22,0.28,0.25);
+      vec3 c=mix(mud,tea,0.5+0.5*sin(vP.x*0.13+vP.y*0.09));
+      c=mix(c,deep,smoothstep(0.2,0.9,d)*0.45);
+      float s=0.5+0.5*sin(vP.x*1.6+uT*1.9+sin(vP.y*0.8+uT*0.6)*2.2);
+      float s2=0.5+0.5*sin(vP.y*2.1-uT*1.4+sin(vP.x*0.7)*1.5);
+      c+=vec3(0.16,0.15,0.12)*smoothstep(0.86,1.0,s*s2)*(1.0-d*0.6);
+      gl_FragColor=vec4(c,a);}`});
+const flood=new THREE.Mesh(new THREE.PlaneGeometry(150,150,40,40),waterM);flood.rotation.x=-PI/2;flood.visible=false;flood.renderOrder=2;scene.add(flood);
+const streakM=new THREE.MeshBasicMaterial({color:0xf2ead8,transparent:true,opacity:.32,depthWrite:false});
+const debrisM=[new THREE.MeshStandardMaterial({color:0x6b4f2a,roughness:.9}),new THREE.MeshStandardMaterial({color:0x5f7f3a,roughness:.9}),new THREE.MeshStandardMaterial({color:0xc9b48a,roughness:.8})];
+const floodFX=new THREE.Group();floodFX.visible=false;scene.add(floodFX);
+function floodSetup(){floodFX.clear();const c=fit.getCenter(V()),s=fit.getSize(V());
+  for(let i=0;i<34;i++){const m=new THREE.Mesh(new THREE.PlaneGeometry(1.2+Math.random()*2.2,.04+Math.random()*.03),streakM);m.rotation.x=-PI/2;
+    m.userData={k:'s',z:c.z+(Math.random()-.5)*(s.z+30),ph:Math.random(),L:s.x+50,x0:c.x-s.x/2-25};floodFX.add(m)}
+  for(let i=0;i<24;i++){const g=new THREE.Mesh(new THREE.BoxGeometry(.3+Math.random()*.4,.05,.14+Math.random()*.12),debrisM[i%3]);
+    g.userData={k:'d',z:c.z+(Math.random()-.5)*(s.z+20),ph:Math.random(),L:s.x+50,x0:c.x-s.x/2-25,r:Math.random()*PI};floodFX.add(g)}}
+
 const RN=700,rainP=new Float32Array(RN*6),rainG=new THREE.BufferGeometry();rainG.setAttribute('position',new THREE.BufferAttribute(rainP,3));
 const rain=new THREE.LineSegments(rainG,new THREE.LineBasicMaterial({color:0x9fc6e2,transparent:true,opacity:.75}));rain.frustumCulled=false;rain.visible=false;scene.add(rain);
 const dropM=new THREE.MeshStandardMaterial({color:0x2f8fd0,emissive:0x0d3a5c,roughness:.2}),windM=new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.85});
@@ -1191,15 +1268,17 @@ function clSetup(){
   const ymax=(DM.yw||4)+1.2;
   for(let i=0;i<60;i++){const g=new THREE.Group(),b=new THREE.Mesh(new THREE.BoxGeometry(1.2,.035,.035),windM),cn=new THREE.Mesh(new THREE.ConeGeometry(.08,.24,8),windM);cn.rotation.z=-PI/2;cn.position.x=.7;g.add(b,cn);
     g.userData={y:.25+Math.random()*ymax,z:c.z+(Math.random()-.5)*(s.z+4),ph:Math.random()};winds.add(g)}
-  clApply();
+  floodSetup();clApply();
 }
 function clTick(now){const T=now/1000;
+  if(cl.tab==='flood'){waterM.uniforms.uT.value=T;floodFX.children.forEach(m=>{const d=m.userData,x=d.x0+((T*(d.k==='s'?1.5:.7)/d.L+d.ph)%1)*d.L;
+    if(d.k==='s'){m.position.set(x,cl.lv+.035,d.z)}else{m.position.set(x,cl.lv+.03+.025*Math.sin(T*1.7+d.ph*9),d.z+.35*Math.sin(T*.6+d.ph*6));m.rotation.set(.12*Math.sin(T*1.3+d.ph*5),d.r+T*.15,.1*Math.sin(T*1.1+d.ph*7))}})}
   if(cl.tab==='rain'){for(let i=0;i<RN;i++){let y=rainP[i*6+1]-.32;if(y<0)y+=14;rainP[i*6+1]=y;rainP[i*6+4]=y-.5}rainG.attributes.position.needsUpdate=true;
     drops.children.forEach(m=>{const d=m.userData,P=d.p,tot=P.cum[P.cum.length-1],s=((T*2.2/tot+d.ph)%1)*tot;let i=1;while(i<P.cum.length-1&&P.cum[i]<s)i++;const k=(s-P.cum[i-1])/((P.cum[i]-P.cum[i-1])||1),a=P.pts[i-1],b=P.pts[i];m.position.set(d.x,a.y+(b.y-a.y)*k,a.z+(b.z-a.z)*k)})}
   if(cl.tab==='wind'){const x0=fit.min.x-7,R=fit.max.x-fit.min.x+14;winds.children.forEach(g=>{const d=g.userData;g.position.set(x0+((T*3/R+d.ph)%1)*R,d.y,d.z)})}}
-function clApply(){const on=cl.on&&!is2d();flood.visible=on&&cl.tab==='flood';flood.position.y=cl.lv;flood.position.x=fit.getCenter(V()).x;flood.position.z=fit.getCenter(V()).z;
+function clApply(){const on=cl.on&&!is2d();flood.visible=on&&cl.tab==='flood';floodFX.visible=flood.visible;flood.position.y=cl.lv;flood.position.x=fit.getCenter(V()).x;flood.position.z=fit.getCenter(V()).z;
   rain.visible=drops.visible=on&&cl.tab==='rain';winds.visible=on&&cl.tab==='wind';render()}
-function clUI(){if(!cl.on)return;const t=U().cl,yf=DM.yf||0;$('clT').textContent=t.t;
+function clUI(){if(!cl.on)return;const t=U().cl,yf=DM.yf||0;$('clT').textContent=t.t;$('clP').dataset.tab=cl.tab;
   $('clTabs').innerHTML=['flood','rain','wind'].map((k,i)=>`<button data-c="${k}" aria-pressed="${k===cl.tab}">${t.tabs[i]}</button>`).join('');
   let h='';if(cl.tab==='flood'){const d=yf-cl.lv;h=`<div class="rng"><input type="range" id="clR" min="0" max="3" step="0.05" value="${cl.lv}" aria-label="${t.lv(cl.lv.toFixed(2))}"><b>${t.lv(cl.lv.toFixed(2))}</b></div><span class="st ${d>0?'ok':'bad'}">${d>0?t.ok(d.toFixed(2)):t.bad}</span> <span class="st" style="background:rgba(0,0,0,.06)">${t.fl(yf.toFixed(2))}</span><p>${t.flood[ri]}</p>`}
   else if(cl.tab==='rain')h=`<span class="st" style="background:rgba(0,0,0,.06)">${t.ang(DM.ang||0)}</span><p>${t.rain[ri]}</p>`;else h=`<p>${t.wind[ri]}</p>`;
@@ -1213,20 +1292,21 @@ $('dimBtn').addEventListener('click',()=>{showD=!showD;setView(1)});
 
 /* ---------- วิธีใช้ (ทัวร์สั้น) ---------- */
 const TS=[{},{sel:'#pickBtn'},{sel:'#langBtn'},{sel:'#modes',pre:()=>setMode('3d')},{sel:'#box',pre:()=>setMode('3d'),inside:1},{sel:'#views',pre:()=>{sub='plan';setMode('2d');setView()}},{sel:'#views',pre:()=>{xmode='struct';labelsHTML();setMode('xray');setView(1)}},{sel:'#acts',pre:()=>{xmode='zone';labelsHTML();setMode('3d')}},{sel:'#tools',pre:()=>setMode('3d')},{sel:'#infoBtn',pre:()=>setMode('3d')}];
+const TC=['#b8322a','#c77a1e','#2f6f8f','#3c7a4a','#7a4f9a','#1f7a7a','#a4493d','#8a6a2a','#2f5fa0','#6b8e23','#9a3d6b','#4a6b2a'];
 let ti=0;
 function tourShow(){
-  const st=TS[ti],u=U(),tx=u.tour[ti],n=TS.length;if(st.pre)st.pre();
+  const st=TS[ti],u=U(),tx=u.tour[ti],n=TS.length;if(st.pre)st.pre();$('tcard').style.setProperty('--tc',TC[ti%TC.length]);
   $('tStep').textContent=u.step(ti+1,n);$('tH').textContent=tx[0];$('tP').textContent=tx[1];
   $('tSkip').textContent=u.tb[0];$('tPrev').textContent=u.tb[1];$('tPrev').hidden=ti===0;$('tNext').textContent=ti===n-1?u.tb[3]:u.tb[2];
   $('tDots').innerHTML=TS.map((_,i)=>`<i class="${i===ti?'on':''}"></i>`).join('');
   const spot=$('spot'),card=$('tcard'),el=st.sel&&document.querySelector(st.sel);
-  if(!el){spot.style.cssText='left:50%;top:50%;width:0;height:0';card.style.cssText='left:50%;top:50%;transform:translate(-50%,-50%)';return}
+  if(!el){spot.style.cssText='left:50%;top:50%;width:0;height:0';card.style.cssText='left:50%;top:50%;transform:translate(-50%,-50%)';card.style.setProperty('--tc',TC[ti%TC.length]);return}
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
     const r=el.getBoundingClientRect(),p=8,vw=innerWidth,vh=innerHeight;
     spot.style.cssText=`left:${r.left-p}px;top:${r.top-p}px;width:${r.width+2*p}px;height:${r.height+2*p}px`;
     const cw=Math.min(380,vw-24),ch=card.offsetHeight,left=Math.max(12,Math.min(vw-cw-12,r.left+r.width/2-cw/2));
     let top=r.bottom+16;if(st.inside||top+ch>vh-12){top=r.top-ch-16;if(top<12)top=st.inside?Math.min(vh-ch-12,r.top+r.height*.55):vh-ch-12}
-    card.style.cssText=`left:${left}px;top:${Math.max(12,top)}px;width:${cw}px`;
+    card.style.cssText=`left:${left}px;top:${Math.max(12,top)}px;width:${cw}px`;card.style.setProperty('--tc',TC[ti%TC.length]);
   }));
 }
 function tourStart(){sheet(false);pick(false);asmStop();clStop();ti=0;$('tour').hidden=false;tourShow();$('tNext').focus()}
