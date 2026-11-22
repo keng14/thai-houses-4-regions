@@ -1,0 +1,17 @@
+{
+  "name": "เรือนไทย 4 ภาค",
+  "short_name": "เรือนไทย",
+  "description": "สื่อการสอนสถาปัตยกรรมพื้นถิ่นไทย 4 ภาค ดู 3D · 2D · X-ray ใน 3 ภาษา",
+  "lang": "th",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#fbfaf7",
+  "theme_color": "#b8322a",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
