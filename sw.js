@@ -1,6 +1,6 @@
 // เรือนไทย 4 ภาค — service worker
 // เพิ่มเลขเวอร์ชันทุกครั้งที่แก้ไฟล์ในแอป เพื่อให้เครื่องดึงไฟล์ใหม่
-const VERSION = 'rt-v4';
+const VERSION = 'rt-v6';
 const CACHE = VERSION;
 const BASE = self.registration ? self.registration.scope : new URL('./', self.location).href;
 const CORE = [
